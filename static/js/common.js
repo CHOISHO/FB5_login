@@ -12,16 +12,22 @@ $(document).ready(function(){
    let bdLabel = joinForm.querySelector(".bd-label"); 
  
    /* remember check */
-   let rememberBtn = document.querySelector(".login-modal .remember-label")  
-   function rememberFocus(){          
-     if(rememberBtn.classList.contains("on") == true){
-       rememberBtn.classList.remove("on");      
+   let rememberObj = loginForm.querySelector(".check-box-form") 
+   let tosObj = joinForm.querySelector(".check-box-form")
+   function rememberFocus(target){          
+     if(target.classList.contains("on") == true){
+       target.classList.remove("on");      
      } else {
-       rememberBtn.classList.add("on");   
+       target.classList.add("on");   
      }
    }
-   rememberBtn.addEventListener("click", rememberFocus);
- 
+   rememberObj.addEventListener("click", function(){
+        rememberFocus(rememberObj)
+   });
+   tosObj.addEventListener("click", function(){
+        rememberFocus(tosObj)
+    }); 
+
    /* notice-board toggle */
    let tabTarget = document.querySelectorAll(".patch-list > li");
    
@@ -78,7 +84,7 @@ $(document).ready(function(){
        let noticePop = document.createElement("span");
        noticePop.classList.add("notice-pop");
        noticePop.style.textAlign ="left";
-       noticePop.style.color ="red";
+       noticePop.style.color ="rgb(203, 56, 11)";
        noticePop.style.fontSize ="16px";  
        noticePop.style.float ="left";          
        noticePop.innerHTML = "* 모든 항목을 채워주세요.";
@@ -87,21 +93,21 @@ $(document).ready(function(){
    function loginCheck(e){
      if(regexEmail.test(loginForm.userId.value) !== true){
          e.preventDefault();        
-         loginForm.userId.style.borderBottom = "2px solid red";        
+         loginForm.userId.style.borderBottom = "2px solid rgb(203, 56, 11)";        
          noticePop.innerHTML = "* 잘못된 이메일 형식입니다.";
          loginModal.appendChild(noticePop);
          loginForm.userId.focus();     
          return false;
      } else if (loginForm.userPw.value==""){
          e.preventDefault();        
-         loginForm.userPw.style.borderBottom = "2px solid red";
+         loginForm.userPw.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          loginModal.appendChild(noticePop);        
          loginForm.userPw.focus();
          return false;
      } else if (regexPass.test(loginForm.userPw.value) !== true){
          e.preventDefault();        
-         loginForm.userPw.style.borderBottom = "2px solid red";
+         loginForm.userPw.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 비밀번호를 확인하세요(문자,숫자,특수문자를 혼합하여 6~20 자리이내)."
          loginModal.appendChild(noticePop);        
          loginForm.userPw.focus();
@@ -113,28 +119,28 @@ $(document).ready(function(){
    function findCheck(e){
      if(findForm.findName.value==""){
          e.preventDefault();        
-         findForm.findName.style.borderBottom = "2px solid red";
+         findForm.findName.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";                    
          findModal.appendChild(noticePop);        
          findForm.findName.focus();  
          return false;
      } else if(regexName.test(findForm.findName.value) !== true){
          e.preventDefault();        
-         findForm.findName.style.borderBottom = "2px solid red";
+         findForm.findName.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 한글은 2 ~ 4글자(공백 없음), 영문은 Firstname(2 ~ 10글자) Lastname(2 ~10글자)로 입력해 주세요.";         
          findModal.appendChild(noticePop); 
          findForm.findName.focus();  
          return false;
      } else if (findForm.findEmail.value==""){
          e.preventDefault();        
-         findForm.findEmail.style.borderBottom = "2px solid red";
+         findForm.findEmail.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          findModal.appendChild(noticePop);        
          findForm.findEmail.focus();        
          return false;
      } else if(regexEmail.test(findForm.findEmail.value) !== true){
          e.preventDefault();        
-         findForm.findEmail.style.borderBottom = "2px solid red";        
+         findForm.findEmail.style.borderBottom = "2px solid rgb(203, 56, 11)";        
          noticePop.innerHTML = "* 잘못된 이메일 형식입니다.";
          findModal.appendChild(noticePop);
          findForm.findEmail.focus();     
@@ -149,14 +155,14 @@ $(document).ready(function(){
    function codeCheck(e){
      if (resetForm.codeNum.value==""){
          e.preventDefault();        
-         resetForm.codeNum.style.borderBottom = "2px solid red";
+         resetForm.codeNum.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          findModal.appendChild(noticePop);        
          resetForm.codeNum.focus();
          return false;
      } else if (regexNum.test(resetForm.codeNum.value) !== true){
        e.preventDefault();        
-       resetForm.codeNum.style.borderBottom = "2px solid red";
+       resetForm.codeNum.style.borderBottom = "2px solid rgb(203, 56, 11)";
        noticePop.innerHTML = "* 숫자만 기입해주세요.";          
        findModal.appendChild(noticePop);        
        resetForm.codeNum.focus();                   
@@ -169,42 +175,42 @@ $(document).ready(function(){
      findCheck(e);
      if (resetForm.codeNum.value==""){
          e.preventDefault();        
-         resetForm.codeNum.style.borderBottom = "2px solid red";
+         resetForm.codeNum.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          findModal.appendChild(noticePop);        
          resetForm.codeNum.focus();
          return false;
      } else if (regexNum.test(resetForm.codeNum.value) !== true){
          e.preventDefault();        
-         resetForm.codeNum.style.borderBottom = "2px solid red";
+         resetForm.codeNum.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 숫자만 기입해주세요.";          
          findModal.appendChild(noticePop);        
          resetForm.codeNum.focus();
          return false;
      } else if (resetForm.rePass.value==""){
          e.preventDefault();        
-         resetForm.rePass.style.borderBottom = "2px solid red";
+         resetForm.rePass.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          findModal.appendChild(noticePop);        
          resetForm.rePass.focus();
          return false;
      } else if (regexPass.test(resetForm.rePass.value) !== true){
          e.preventDefault();        
-         resetForm.rePass.style.borderBottom = "2px solid red";
+         resetForm.rePass.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 비밀번호를 확인하세요(문자,숫자,특수문자를 혼합하여 6~20 자리이내)."
          findModal.appendChild(noticePop);        
          resetForm.rePass.focus();
          return false;
      } else if (resetForm.rePassCheck.value==""){
          e.preventDefault();        
-         resetForm.rePassCheck.style.borderBottom = "2px solid red";
+         resetForm.rePassCheck.style.borderBottom = "2px solid rgb(203, 56, 11)";
          findModal.appendChild(noticePop);        
          resetForm.rePassCheck.focus();
          return false;
      } else if(resetForm.rePass.value!=resetForm.rePassCheck.value){
          e.preventDefault();
-         resetForm.rePassCheck.style.borderBottom = "2px solid red";        
-         resetForm.rePassCheck.style.borderBottom = "2px solid red";        
+         resetForm.rePassCheck.style.borderBottom = "2px solid rgb(203, 56, 11)";        
+         resetForm.rePassCheck.style.borderBottom = "2px solid rgb(203, 56, 11)";        
          noticePop.innerHTML = "* 비밀번호는 동일해야 합니다."
          findModal.appendChild(noticePop);
          return false;
@@ -217,14 +223,14 @@ $(document).ready(function(){
      /* 빈칸 체크 */
      if(joinForm.name.value==""){
          e.preventDefault();        
-         joinForm.name.style.borderBottom = "2px solid red";
+         joinForm.name.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";                    
          joinModal.appendChild(noticePop);        
          joinForm.name.focus();  
          return false;
      } else if(regexName.test(joinForm.name.value) !== true){
          e.preventDefault();        
-         joinForm.name.style.borderBottom = "2px solid red";
+         joinForm.name.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 한글은 2 ~ 4글자(공백 없음), 영문은 Firstname(2 ~ 10글자) Lastname(2 ~10글자)로 입력해 주세요.";         
          joinModal.appendChild(noticePop); 
          joinForm.name.focus();  
@@ -247,42 +253,42 @@ $(document).ready(function(){
          return false;
      } else if (joinForm.email.value==""){
          e.preventDefault();        
-         joinForm.email.style.borderBottom = "2px solid red";
+         joinForm.email.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          joinModal.appendChild(noticePop);        
          joinForm.email.focus();        
          return false;
      } else if(regexEmail.test(joinForm.email.value) !== true){
          e.preventDefault();        
-         joinForm.email.style.borderBottom = "2px solid red";        
+         joinForm.email.style.borderBottom = "2px solid rgb(203, 56, 11)";        
          noticePop.innerHTML = "* 잘못된 이메일 형식입니다.";
          joinModal.appendChild(noticePop);
          joinForm.email.focus();     
          return false;
      } else if (joinForm.pass.value==""){
          e.preventDefault();        
-         joinForm.pass.style.borderBottom = "2px solid red";
+         joinForm.pass.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 모든 항목을 채워주세요.";          
          joinModal.appendChild(noticePop);        
          joinForm.pass.focus();
          return false;
      } else if (regexPass.test(joinForm.pass.value) !== true){
          e.preventDefault();        
-         joinForm.pass.style.borderBottom = "2px solid red";
+         joinForm.pass.style.borderBottom = "2px solid rgb(203, 56, 11)";
          noticePop.innerHTML = "* 비밀번호를 확인하세요(문자,숫자,특수문자를 혼합하여 6~20 자리이내)."
          joinModal.appendChild(noticePop);        
          joinForm.pass.focus();
          return false;
      } else if (joinForm.passCheck.value==""){
          e.preventDefault();        
-         joinForm.passCheck.style.borderBottom = "2px solid red";
+         joinForm.passCheck.style.borderBottom = "2px solid rgb(203, 56, 11)";
          joinModal.appendChild(noticePop);        
          joinForm.passCheck.focus();
          return false;
      } else if(joinForm.pass.value!=joinForm.passCheck.value) {
        e.preventDefault();
-       joinForm.pass.style.borderBottom = "2px solid red";        
-       joinForm.passCheck.style.borderBottom = "2px solid red";        
+       joinForm.pass.style.borderBottom = "2px solid rgb(203, 56, 11)";        
+       joinForm.passCheck.style.borderBottom = "2px solid rgb(203, 56, 11)";        
        noticePop.innerHTML = "* 비밀번호는 동일해야 합니다."
        joinModal.appendChild(noticePop);
        return false;

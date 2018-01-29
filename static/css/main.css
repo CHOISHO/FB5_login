@@ -110,6 +110,18 @@ body {
     height: 580px;
     float: right;
     box-shadow: 1px 2px 5px black; }
+    .container .right-con section {
+      position: relative; }
+      .container .right-con section .quickBtn {
+        background-color: #dedede;
+        border-radius: 2px;
+        position: absolute;
+        top: 5px;
+        right: 0; }
+        .container .right-con section .quickBtn a {
+          display: inline-block;
+          padding: 3px 6px;
+          font-size: 16px; }
     .container .right-con input[type="text"], .container .right-con input[type="password"] {
       -moz-appearance: none;
       -webkit-appearance: none;
@@ -146,6 +158,26 @@ body {
       cursor: pointer; }
       .container .right-con .submit-btn:focus {
         outline: none; }
+    .container .right-con .check-box {
+      margin: 0;
+      visibility: hidden; }
+      .container .right-con .check-box:focus {
+        outline: none; }
+    .container .right-con .check-box-form {
+      color: #999;
+      position: relative;
+      left: -14px;
+      padding-left: 20px; }
+      .container .right-con .check-box-form .svg-inline--fa {
+        position: absolute;
+        top: 3px;
+        left: 0; }
+      .container .right-con .check-box-form:after {
+        display: none;
+        font-family: "Font Awesome 5 Regular";
+        content: '\f0c8'; }
+      .container .right-con .check-box-form.on:after {
+        content: "\f14a"; }
     .container .right-con .notice-pop {
       text-align: left; }
     .container .right-con .modal-title {
@@ -168,33 +200,12 @@ body {
         .container .right-con .login-modal form input[type="submit"] {
           margin-top: 15px;
           padding: 8px 0; }
-        .container .right-con .login-modal form .remember-label {
-          color: #999;
-          position: relative;
-          left: -17px;
-          padding-left: 20px; }
-          .container .right-con .login-modal form .remember-label .svg-inline--fa {
-            position: absolute;
-            top: 3px;
-            left: 0; }
-          .container .right-con .login-modal form .remember-label:after {
-            display: none;
-            font-family: "Font Awesome 5 Regular";
-            content: '\f0c8'; }
-          .container .right-con .login-modal form .remember-label.on:after {
-            content: "\f14a"; }
-        .container .right-con .login-modal form .remember-btn {
-          margin: 0;
-          visibility: hidden; }
-          .container .right-con .login-modal form .remember-btn:focus {
-            outline: none; }
-        .container .right-con .login-modal form label {
-          vertical-align: middle; }
       .container .right-con .login-modal .social-login {
         position: absolute;
         left: 0;
         width: 100%;
-        bottom: 15%; }
+        height: 160px;
+        bottom: 12%; }
         .container .right-con .login-modal .social-login a {
           color: white;
           border-radius: 2px;
