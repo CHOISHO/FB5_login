@@ -197,6 +197,10 @@ body {
         position: relative; 
         left: -14px;
         padding-left: 20px; 
+        -webkit-user-select: none; /* Safari */        
+          -moz-user-select: none; /* Firefox */
+           -ms-user-select: none; /* Internet Explorer/Edge */
+               user-select: none; 
         .svg-inline--fa {
           position: absolute; 
           top: 3px;

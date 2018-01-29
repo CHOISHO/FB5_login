@@ -42,23 +42,34 @@ $(document).ready(function(){
    let notice = document.querySelector(".notice-board");
    let rightCon = document.querySelector(".right-con");
    let tos = document.querySelector(".terms-of-service");
+   let loginModalBtn = document.querySelectorAll(".quickBtn a")
    let infoBtn = document.querySelector(".find-user-btn");
    let joinBtn =  document.querySelector(".join-btn");
    let loginModal = document.querySelector(".login-modal");
    let joinModal = document.querySelector(".join-modal");
    let findModal = document.querySelector(".find-modal");
- 
+
+   console.log(loginModalBtn)
+
    function modalChanger( targetBtn, target, target1){
  
-   targetBtn.addEventListener("click", function(){
-       loginModal.style.display = "none";
-       target.style.display = "block";
-       if(targetBtn == joinBtn) {
-         notice.style.display = "none";
-         tos.style.display = "block"
-       }
-     })
+        targetBtn.addEventListener("click", function(){
+            loginModal.style.display = "none";
+            target.style.display = "block";   
+            console.log(11)  
+            if(targetBtn == joinBtn) {
+                notice.style.display = "none";
+                tos.style.display = "block"
+            } else if(target == loginModal){
+                notice.style.display = "block";                
+                tos.style.display = "none";      
+                joinModal.style.display = "none";   
+                findModal.style.display = "none";                                         
+            }               
+        })
    }
+   modalChanger(loginModalBtn[0], loginModal);
+   modalChanger(loginModalBtn[1], loginModal);   
    modalChanger(joinBtn, joinModal);
    modalChanger(infoBtn, findModal);
  
