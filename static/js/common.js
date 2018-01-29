@@ -12,15 +12,12 @@ $(document).ready(function(){
    let bdLabel = joinForm.querySelector(".bd-label"); 
  
    /* remember check */
-   let rememberBtn = document.querySelector(".login-modal label")  
-   function rememberFocus(){
-     let checkTarget = this.parentNode.querySelector(".remember-btn");
-     console.log(checkTarget)
-     
-     if(checkTarget.classList.contains("on") == true){
-       checkTarget.classList.remove("on");      
+   let rememberBtn = document.querySelector(".login-modal .remember-label")  
+   function rememberFocus(){          
+     if(rememberBtn.classList.contains("on") == true){
+       rememberBtn.classList.remove("on");      
      } else {
-       checkTarget.classList.add("on");   
+       rememberBtn.classList.add("on");   
      }
    }
    rememberBtn.addEventListener("click", rememberFocus);

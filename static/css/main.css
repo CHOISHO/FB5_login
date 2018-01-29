@@ -168,20 +168,26 @@ body {
         .container .right-con .login-modal form input[type="submit"] {
           margin-top: 15px;
           padding: 8px 0; }
+        .container .right-con .login-modal form .remember-label {
+          color: #999;
+          position: relative;
+          left: -17px;
+          padding-left: 20px; }
+          .container .right-con .login-modal form .remember-label .svg-inline--fa {
+            position: absolute;
+            top: 3px;
+            left: 0; }
+          .container .right-con .login-modal form .remember-label:after {
+            display: none;
+            font-family: "Font Awesome 5 Regular";
+            content: '\f0c8'; }
+          .container .right-con .login-modal form .remember-label.on:after {
+            content: "\f14a"; }
         .container .right-con .login-modal form .remember-btn {
-          -moz-appearance: none;
-          -webkit-appearance: none;
-          appearance: none;
-          border: 2px solid #999;
-          border-radius: 2px;
           margin: 0;
-          width: 15px;
-          height: 15px;
-          vertical-align: middle; }
+          visibility: hidden; }
           .container .right-con .login-modal form .remember-btn:focus {
             outline: none; }
-          .container .right-con .login-modal form .remember-btn.on {
-            border: 4px solid red; }
         .container .right-con .login-modal form label {
           vertical-align: middle; }
       .container .right-con .login-modal .social-login {

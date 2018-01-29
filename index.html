@@ -20,6 +20,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>       
+    <script>
+        FontAwesomeConfig = { searchPseudoElements: true };
+      </script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <!-- SNS login -->
     <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
@@ -34,7 +38,7 @@
     </script>
     <!-- <script src="static/js/mail.js"></script> -->
   </head>
-  <body>
+  <body>      
     <div id="test" class="container">
         <section class="notice-board">
           <!-- <span>[[ 1+1 ]]</span>
@@ -276,8 +280,8 @@
               <input name="userId" type="text" value="" placeholder="username@google.com">
               <input name="userPw" type="password" value="" placeholder="password">
               <input class="remember-btn" name="rememberBtn" type="checkbox" id="remember">
-              <label for="remember">Remember me</label>
-              <input class="submit-btn login-submit" type="submit" value="Login">
+              <label class="remember-label" for="remember">Remember me</label>                          
+              <input class="submit-btn login-submit" type="submit" value="Login">              
             </form>    
             <a class="join-btn" href="#" >회원가입</a>         
             <a class="find-user-btn" href="#">ID/PW 찾기</a>
